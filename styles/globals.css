@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar on nav (but keep scroll working) */
+nav::-webkit-scrollbar {
+  display: none;
+}
+nav {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Chat scrollable area */
+.chat-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: #B2DFDB;
+  border-radius: 2px;
+}
+
+/* Print styles — hides everything except the report */
+@media print {
+  body > * {
+    display: none !important;
+  }
+  #printable-report {
+    display: block !important;
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  #printable-report * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* Input focus ring */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #00897B !important;
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.12);
+}
+
+/* Checkbox accent */
+input[type='checkbox'] {
+  accent-color: #00897B;
+}
+
+/* Mobile-friendly tap targets */
+@media (max-width: 600px) {
+  button {
+    min-height: 44px;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px !important; /* prevents iOS auto-zoom */
+  }
+}
